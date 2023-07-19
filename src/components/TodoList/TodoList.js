@@ -38,7 +38,7 @@ const TodoList = () => {
   }
 
   return (
-    <div>
+    <div className="main-section">
       <h3>REMAINING TASKS: {remainingItems}</h3>
      
       <input
