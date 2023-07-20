@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import TopBar from "./components/TopBar/TopBar";
+// import TopBar from "./components/TopBar/TopBar";
 import ProjectList from "./components/ProjectList/ProjectList";
 import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   return (
     <div>
-      <div className="TopBar">
+      {/* <div className="TopBar">
         <TopBar placeholder="Search for a task..." />
-      </div>
+      </div> */}
       <div className="ProjectList">
         <ProjectList />
       </div>

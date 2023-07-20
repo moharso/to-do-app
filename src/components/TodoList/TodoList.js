@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./TodoList.css";
-import { useEffect } from "react";
 import InputForm from "../InputForm/InputForm";
-
-
+import TopBar from "../TopBar/TopBar";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -13,6 +11,12 @@ const TodoList = () => {
     input: "",
     isChecked: false,
   });
+
+  // new state variable for search term
+  const [search, setSearch] = useState("");
+  const handleSearch = (term) => {
+    setSearch(term);
+  };
 
   const handleOnClick = () => {
     setTodos([...todos, text]);
@@ -34,23 +38,31 @@ const TodoList = () => {
   }, [text.isChecked, todos, isComponentLoaded]);
 
   if (!isComponentLoaded) {
-    <h2>Loading...</h2>;
+    return <h2>Loading...</h2>; //add spinner
   }
+
+  //todos array filter
+  const filteredTodos = todos.filter(
+    (todo) =>
+      todo.input && todo.input.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div>
       <h3>REMAINING TASKS: {remainingItems}</h3>
-     
+
       <input
         onChange={(event) => setText({ ...text, input: event.target.value })}
         type="text"
       />
       <br />
       <button onClick={handleOnClick}>ADD TASK</button>
-     
 
-      <InputForm todos={todos} setTodos={setTodos} />
-     
+      {/* rendering TopBar with props */}
+      <TopBar placeholder="Search for a task" onSearch={handleSearch} />
+      {/* passing filtered Todos list */}
+      <InputForm todos={filteredTodos} setTodos={setTodos} />
+
       <button
         onClick={() => {
           const remainingTodos = todos.filter((todo) => !todo.isChecked);
@@ -59,7 +71,6 @@ const TodoList = () => {
       >
         CLEAR LIST
       </button>
-     
     </div>
   );
 };

@@ -1,8 +1,7 @@
-
 import "./InputForm.css";
 
-
 const InputForm = ({ todos, setTodos }) => {
+  console.log(todos);
   return (
     <ul>
       {todos.map((todo, index) => (
