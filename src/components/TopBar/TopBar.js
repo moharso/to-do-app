@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import "./TopBar.css";
 
-const TopBar = ({ placeholder, data, onSearch }) => {
+const TopBar = ({ placeholder, onSearch }) => {
   console.log("onSearch prop value:", onSearch);
   return (
     <div className="search">
@@ -17,9 +17,6 @@ const TopBar = ({ placeholder, data, onSearch }) => {
         <button className="searchButton" type="submit">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
-      </div>
-      <div className="searchResults">
-        {data && data.map((item) => <p>{item.input}</p>)}
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ const TodoList = () => {
   }, [text.isChecked, todos, isComponentLoaded]);
 
   if (!isComponentLoaded) {
-    <h2>Loading...</h2>;
+    return <h2>Loading...</h2>; //add spinner
   }
 
   //todos array filter
@@ -59,11 +59,7 @@ const TodoList = () => {
       <button onClick={handleOnClick}>ADD TASK</button>
 
       {/* rendering TopBar with props */}
-      <TopBar
-        placeholder="Search for a task"
-        data={filteredTodos}
-        onSearch={handleSearch}
-      />
+      <TopBar placeholder="Search for a task" onSearch={handleSearch} />
       {/* passing filtered Todos list */}
       <InputForm todos={filteredTodos} setTodos={setTodos} />
 
