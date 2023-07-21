@@ -6,9 +6,14 @@ const ProjectList = () => {
     <div className="project-list">
       <h1>Projects</h1>
       <ul className="menu">
-        <li>Home</li>
-        <li>Work</li>
-        <li>Personal</li>
+        <li>
+          All
+          <ul>
+            <li>Home</li>
+            <li>Work</li>
+            <li>Personal</li>
+          </ul>
+        </li>
       </ul>
     </div>
   );

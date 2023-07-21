@@ -7,19 +7,14 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [isComponentLoaded, setIsComponentLoaded] = useState(false);
   const [remainingItems, setRemainingItems] = useState(0);
-  const [text, setText] = useState({
+  const [text] = useState({
     input: "",
     isChecked: false,
   });
 
-  // new state variable for search term
   const [search, setSearch] = useState("");
   const handleSearch = (term) => {
     setSearch(term);
-  };
-
-  const handleOnClick = () => {
-    setTodos([...todos, text]);
   };
 
   useEffect(() => {
@@ -50,13 +45,6 @@ const TodoList = () => {
   return (
     <div>
       <h3>REMAINING TASKS: {remainingItems}</h3>
-
-      <input
-        onChange={(event) => setText({ ...text, input: event.target.value })}
-        type="text"
-      />
-      <br />
-      <button onClick={handleOnClick}>ADD TASK</button>
 
       {/* rendering TopBar with props */}
       <TopBar placeholder="Search for a task" onSearch={handleSearch} />
