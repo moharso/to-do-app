@@ -7,7 +7,8 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [isComponentLoaded, setIsComponentLoaded] = useState(false);
   const [remainingItems, setRemainingItems] = useState(0);
-  const [text] = useState({
+  const [text, setText] = useState({
+    id: 1,
     input: "",
     isChecked: false,
   });
@@ -57,7 +58,7 @@ const TodoList = () => {
           setTodos(remainingTodos);
         }}
       >
-        CLEAR LIST
+        DELETE COMPLETED TASKS
       </button>
     </div>
   );
