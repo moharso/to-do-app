@@ -3,11 +3,11 @@ import TodoList from "../TodoList/TodoList";
 
 import "./MainContent.css";
 
-const MainContent = () => {
+const MainContent = ({ search }) => {
   return (
     <>
       <ProjectList />
-      <TodoList />
+      <TodoList search={search} />
     </>
   );
 };
