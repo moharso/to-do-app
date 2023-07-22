@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainContent from "../components/MainContent/MainContent";
-import TopBar from "../components/TopBar/TopBar";
+import { TopBar } from "../reusableComponents/reusableComponents";
+
 import "./MainPage.css";
 
 const MainPage = () => {

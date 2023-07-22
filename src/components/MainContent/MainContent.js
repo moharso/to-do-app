@@ -1,6 +1,6 @@
 import React from "react";
 import TodoList from "../TodoList/TodoList";
-import ProjectList from "../ProjectList/ProjectList";
+import { ProjectList } from "../../reusableComponents/reusableComponents";
 
 import "./MainContent.css";
 

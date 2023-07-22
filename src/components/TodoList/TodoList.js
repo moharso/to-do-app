@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./TodoList.css";
-import InputForm from "../InputForm/InputForm";
+import { InputForm } from "../../reusableComponents/reusableComponents";
 
 const TodoList = ({ search, selectedProject }) => {
   const [todos, setTodos] = useState([]);
