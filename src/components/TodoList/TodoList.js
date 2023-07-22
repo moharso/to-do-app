@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import "./TodoList.css";
 import InputForm from "../InputForm/InputForm";
 
-const TodoList = ({ search }) => {
+const TodoList = ({ search, selectedProject }) => {
   const [todos, setTodos] = useState([]);
   const [isComponentLoaded, setIsComponentLoaded] = useState(false);
   const [remainingItems, setRemainingItems] = useState(0);
-  const searchText = search || "";
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
@@ -28,13 +27,13 @@ const TodoList = ({ search }) => {
   }
 
   //todos array filter
-  const filteredTodos = todos.filter(
-    (todo) =>
-      (todo.input &&
-        todo.input.toLowerCase().includes(searchText.toLowerCase())) ||
-      false
-  );
-
+  const filteredTodos = todos.filter((todo) => {
+    const matchesSearch =
+      !search || todo.input.toLowerCase().includes(search.toLowerCase());
+    const matchesProject =
+      selectedProject === "All" || todo.type === selectedProject;
+    return matchesSearch && matchesProject;
+  });
   return (
     <div>
       <h3>REMAINING TASKS: {remainingItems}</h3>

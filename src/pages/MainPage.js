@@ -5,6 +5,7 @@ import "./MainPage.css";
 
 const MainPage = () => {
   const [search, setSearch] = useState("");
+  const [selectedProject, setSelectedProject] = useState("All");
 
   const handleSearch = (term) => {
     setSearch(term);
@@ -14,7 +15,12 @@ const MainPage = () => {
     <>
       {/* rendering TopBar with props */}
       <TopBar placeholder="Search for a task" onSearch={handleSearch} />
-      <MainContent search={search} />
+      {/* passing selected project and handler to MainContent */}
+      <MainContent
+        search={search}
+        selectedProject={selectedProject}
+        onProjectClick={setSelectedProject}
+      />
     </>
   );
 };
