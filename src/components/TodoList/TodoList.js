@@ -1,22 +1,11 @@
 import { useState, useEffect } from "react";
 import "./TodoList.css";
-import InputForm from "../InputForm/InputForm";
-import TopBar from "../TopBar/TopBar";
+import { InputForm } from "../../reusableComponents/reusableComponents";
 
-const TodoList = () => {
+const TodoList = ({ search, selectedProject }) => {
   const [todos, setTodos] = useState([]);
   const [isComponentLoaded, setIsComponentLoaded] = useState(false);
   const [remainingItems, setRemainingItems] = useState(0);
-  const [text, setText] = useState({
-    id: 1,
-    input: "",
-    isChecked: false,
-  });
-
-  const [search, setSearch] = useState("");
-  const handleSearch = (term) => {
-    setSearch(term);
-  };
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
@@ -31,24 +20,24 @@ const TodoList = () => {
     const remainingTodos = todos.filter((todo) => !todo.isChecked).length;
 
     setRemainingItems(remainingTodos);
-  }, [text.isChecked, todos, isComponentLoaded]);
+  }, [todos, isComponentLoaded]);
 
   if (!isComponentLoaded) {
     return <h2>Loading...</h2>; //add spinner
   }
 
   //todos array filter
-  const filteredTodos = todos.filter(
-    (todo) =>
-      todo.input && todo.input.toLowerCase().includes(search.toLowerCase())
-  );
-
+  const filteredTodos = todos.filter((todo) => {
+    const matchesSearch =
+      !search || todo.input.toLowerCase().includes(search.toLowerCase());
+    const matchesProject =
+      selectedProject === "All" || todo.type === selectedProject;
+    return matchesSearch && matchesProject;
+  });
   return (
     <div>
       <h3>REMAINING TASKS: {remainingItems}</h3>
 
-      {/* rendering TopBar with props */}
-      <TopBar placeholder="Search for a task" onSearch={handleSearch} />
       {/* passing filtered Todos list */}
       <InputForm todos={filteredTodos} setTodos={setTodos} />
 
