@@ -1,10 +1,11 @@
 .TodoList {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
-  height: 100%;
-  width: 100%;
-  background: rgba( 255, 255, 255, 0. 2);
+  height: 95%;
+  width: 80%;
+  background: rgba(197, 195, 190, 0.7);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 0px );
   -webkit-backdrop-filter: blur( 0px );
@@ -12,3 +13,37 @@
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding: 3rem 3rem 0rem 3rem;
 }
+
+.TodoList h4 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.TodoList button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DeleteAll{
+  font-size: 12px;
+  color: #000000;
+  background-color: rgb(181, 170, 157);
+  padding: 10px 30px;
+  border: solid rgb(180, 169, 157) 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 16px;
+  transition : 2008ms;
+  transform: translateY(0);
+  cursor: pointer;
+  width: 17rem;
+  }
+  
+  .DeleteAll:hover{
+  transition : 2008ms;
+  padding: 10px 41px;
+  transform : translateY(-0px);
+  background-color: #fff;
+  color: #000000;
+  border: solid 2px #dcdbda;
+  }

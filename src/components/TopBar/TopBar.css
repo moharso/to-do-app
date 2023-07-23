@@ -1,9 +1,9 @@
- .search {
+ .TopBarContent {
    display: flex;
-   gap: 5rem;
+   gap: 10rem;
  }
  
- .search input {
+ .TopBarContent input {
   background-color: #dcdbda;
   border: 1px solid transparent;
   border-radius: 2px;

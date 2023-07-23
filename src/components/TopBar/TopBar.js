@@ -2,11 +2,15 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./TopBar.css"
+import DarkLightButton from "../DarkLightButton/DarkLightButton";
 
 
 const TopBar = ({ placeholder, onSearch }) => {
   return (
-    <div className="search">
+    <div className="TopBarContent">
+      <div className="SwitchButton">
+        <DarkLightButton></DarkLightButton>
+      </div>
       <div className="searchInput">
         <input
           type="text"

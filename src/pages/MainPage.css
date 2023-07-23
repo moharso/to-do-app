@@ -1,14 +1,12 @@
 .TopBar {
     height: 5vh;
-    background-color: #b5aa9d;
     display:  flex;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 9rem;
    }
 
 .MainContent {
     display: flex;
     width: 100%;
     height: 95vh;
-    background-color: #f8f8f8;
 }

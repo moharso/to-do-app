@@ -54,18 +54,19 @@ const InputForm = ({ todos, setTodos }) => {
   };
 
   return (
-    <div>
+    <div className="InputForm">
       <form onSubmit={handleFormSubmit}>
         <input
+        className="AddTaskInput"
           type="text"
           name="todo"
-          placeholder="Enter your task"
+          placeholder="+ Add your task"
           value={text.input}
           onChange={(e) =>
             setText((prevState) => ({ ...prevState, input: e.target.value }))
           }
         />
-        <label>
+        <label className="HomeCheckbox">
           <input
             type="radio"
             name="type"
@@ -75,7 +76,7 @@ const InputForm = ({ todos, setTodos }) => {
           />
           Home
         </label>
-        <label>
+        <label className="WorkCheckbox">
           <input
             type="radio"
             name="type"
@@ -85,7 +86,7 @@ const InputForm = ({ todos, setTodos }) => {
           />
           Work
         </label>
-        <label>
+        <label PersonalCheckbox>
           <input
             type="radio"
             name="type"
@@ -95,9 +96,9 @@ const InputForm = ({ todos, setTodos }) => {
           />
           Personal
         </label>
-        <br />
-        <button type="submit">ADD TASK</button>
+        <button className="AddTaskButton" type="submit">ADD TASK</button>
       </form>
+      <div className="Todos">
       <ul>
         {todos.map((todo, index) => (
           <div className="todoListItem" key={index}>
@@ -134,14 +135,15 @@ const InputForm = ({ todos, setTodos }) => {
             />
 
             {editMode[index] ? (
-              <button onClick={() => handleSaveTodo(index)}>SAVE</button>
+              <button className="SaveButton" onClick={() => handleSaveTodo(index)}>SAVE</button>
             ) : (
-              <button onClick={() => handleEditTodo(index)}>EDIT</button>
+              <button className="EditButton" onClick={() => handleEditTodo(index)}>EDIT</button>
             )}
-            <button onClick={() => handleDeleteTodo(index)}>DELETE</button>
+            <button className="DeleteButton" onClick={() => handleDeleteTodo(index)}>DELETE</button>
           </div>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
