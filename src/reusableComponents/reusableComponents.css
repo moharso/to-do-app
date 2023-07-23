@@ -1,0 +1,36 @@
+/* .search input {
+    background-color: #dcdbda;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 8px;
+    height: 15px;
+    width: 200px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+  
+  .searchButton {
+    background-color: #dcdbda;
+    border: none;
+    outline: none;
+    margin-left: -33px;
+    cursor: pointer;
+  }
+  
+  .svg-inline--fa {
+    background-color: transparent;
+  }
+  
+  input:focus {
+    outline: none;
+    background-color: white;
+  }
+  
+  input:hover {
+    background-color: white;
+    transition: 0.3s;
+  }
+  
+  
+   */

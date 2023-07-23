@@ -1,0 +1,9 @@
+.todoListItem {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.taskType {
+  margin-left: 10px;
+}
