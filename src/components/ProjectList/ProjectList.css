@@ -1,26 +1,89 @@
-.project-list {
-  width: 250px;
-  height: 100%;
-  background-color: #f0f0f0;
+.ProjectListWrapper {
+  min-width: 305px;
+  padding: 1rem;
 }
 
-.menu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li {
+.Menu li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  list-style-type: none;
+  height: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.menu ul {
+.Menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.menu li:hover {
-  background-color: #eaeaea;
+.Menu li:first-child:hover {
+  background-color: rgba(181, 170, 157, 0.154);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.Menu li:nth-child(2):hover {
+  background-color: #70a2882d;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.Menu li:nth-child(3):hover {
+  background-color: #dab7852e;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.Menu li:nth-child(4):hover {
+  background-color: #8e93ca25;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.ImgWrapper img {
+  width: 200px;
+  height: 200px;
+}
+
+.ImgWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ProjectList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ProjectListHome svg,
+.ProjectListHome:hover {
+  color: #70a288;
+}
+
+.ProjectListWork svg,
+.ProjectListWork:hover {
+  color: #dab785;
+}
+
+.ProjectListPersonal svg,
+.ProjectListPersonal:hover {
+  color: #8e93cae7;
+}
+
+.ProjectListAll svg,
+.ProjectListAll:hover {
+  color: rgb(181, 170, 157);
+}
+
+@media screen and (max-width: 1150px) {
+  .ProjectListWrapper {
+    width: 20%;
+    min-width: 150px;
+  }
 }

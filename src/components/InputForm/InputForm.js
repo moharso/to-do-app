@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./InputForm.css";
+import { faPenFancy, faTrash, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InputForm = ({ todos, setTodos }) => {
   const [text, setText] = useState({
@@ -19,6 +21,11 @@ const InputForm = ({ todos, setTodos }) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    if (text.input.trim().length < 3) {
+      alert("Task must be at least 3 characters long.");
+      return;
+    }
 
     const newTodo = {
       input: event.target.todo.value,
@@ -54,18 +61,19 @@ const InputForm = ({ todos, setTodos }) => {
   };
 
   return (
-    <div>
+    <div className="InputForm">
       <form onSubmit={handleFormSubmit}>
         <input
+          className="AddTaskInput"
           type="text"
           name="todo"
-          placeholder="Enter your task"
+          placeholder="+ Add your task"
           value={text.input}
           onChange={(e) =>
             setText((prevState) => ({ ...prevState, input: e.target.value }))
           }
         />
-        <label>
+        <label className="HomeCheckbox">
           <input
             type="radio"
             name="type"
@@ -73,9 +81,9 @@ const InputForm = ({ todos, setTodos }) => {
             checked={text.type === "Home"}
             onChange={handleTypeChange}
           />
-          Home
+          <span className="HomeSpan">Home</span>
         </label>
-        <label>
+        <label className="WorkCheckbox">
           <input
             type="radio"
             name="type"
@@ -83,9 +91,9 @@ const InputForm = ({ todos, setTodos }) => {
             checked={text.type === "Work"}
             onChange={handleTypeChange}
           />
-          Work
+          <span className="WorkSpan">Work</span>
         </label>
-        <label>
+        <label className="PersonalCheckbox">
           <input
             type="radio"
             name="type"
@@ -93,55 +101,63 @@ const InputForm = ({ todos, setTodos }) => {
             checked={text.type === "Personal"}
             onChange={handleTypeChange}
           />
-          Personal
+          <span className="PersonalSpan">Personal</span>
         </label>
-        <br />
-        <button type="submit">ADD TASK</button>
+        <div className="AddTaskButtonWrapper">
+          <button className="AddTaskButton" type="submit">ADD TASK</button>
+        </div>
       </form>
-      <ul>
-        {todos.map((todo, index) => (
-          <div className="todoListItem" key={index}>
-            
-            {editMode[index] ? (
+      <div className="Todos">
+        <ul>
+          {todos.map((todo, index) => (
+            <div className="todoListItem" key={index}>
               <input
-                type="text"
-                value={todo.input}
-                onChange={(e) =>
-                  setTodos((prevTodos) =>
-                    prevTodos.map((t, i) =>
-                      i === index ? { ...t, input: e.target.value } : t
-                    )
-                  )
-                }
+                className={`TodosCheckbox${todo.type}`}
+                onClick={() => {
+                  setTodos((prevTodos) => {
+                    return prevTodos.map((t, i) =>
+                      i === index ? { ...t, isChecked: !t.isChecked } : t
+                    );
+                  });
+                }}
+                type="radio"
+                checked={todo.isChecked}
               />
-            ) : (
-            <li
-              style={{ textDecoration: todo.isChecked ? "line-through" : "" }}
-            >
-              {todo.input} - {todo.type}
-            </li>
-            )}
-            <input
-              onClick={() => {
-                setTodos((prevTodos) => {
-                  return prevTodos.map((t, i) =>
-                    i === index ? { ...t, isChecked: !t.isChecked } : t
-                  );
-                });
-              }}
-              type="checkbox"
-              checked={todo.isChecked}
-            />
+              {editMode[index] ? (
+                <input
+                  className={`Edit${todo.type}`}
+                  type="text"
+                  value={todo.input}
+                  onChange={(e) =>
+                    setTodos((prevTodos) =>
+                      prevTodos.map((t, i) =>
+                        i === index ? { ...t, input: e.target.value } : t
+                      )
+                    )
+                  }
+                />
+              ) : (
+                <li
+                  style={{ textDecoration: todo.isChecked ? "line-through" : "" }}
+                  className={todo.type}
+                >
+                  {todo.input}
+                </li>
+              )}
 
-            {editMode[index] ? (
-              <button onClick={() => handleSaveTodo(index)}>SAVE</button>
-            ) : (
-              <button onClick={() => handleEditTodo(index)}>EDIT</button>
-            )}
-            <button onClick={() => handleDeleteTodo(index)}>DELETE</button>
-          </div>
-        ))}
-      </ul>
+
+              {editMode[index] ? (
+                <button className="SaveButton" onClick={() => handleSaveTodo(index)}><FontAwesomeIcon icon={faFloppyDisk} style={{ color: "#22511f", }} /></button>
+              ) : (
+                <button className="EditButton" onClick={() => handleEditTodo(index)}>
+                  <FontAwesomeIcon icon={faPenFancy} style={{ "--fa-primary-color": "#b7781f", "--fa-secondary-color": "#b7781f", }} />
+                </button>
+              )}
+              <button className="DeleteButton" onClick={() => handleDeleteTodo(index)}><FontAwesomeIcon icon={faTrash} style={{ "--fa-primary-color": "#005f61", "--fa-secondary-color": "#005f61", }} /></button>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
