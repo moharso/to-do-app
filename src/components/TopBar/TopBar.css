@@ -27,12 +27,12 @@
   background-color: transparent;
 }
 
-input:focus {
+.searchInput input:focus {
   outline: none;
   background-color: white;
 }
 
-input:hover {
+.searchInput input:hover {
   background-color: white;
   transition: 0.3s;
 }

@@ -18,6 +18,7 @@
   list-style-type: none;
   height: 2rem;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .Menu ul {
@@ -26,8 +27,28 @@
   padding: 0;
 }
 
-.Menu li:hover {
-  background-color: #eaeaea;
+.Menu li:first-child:hover {
+  background-color: rgba(181, 170, 157, 0.154);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.Menu li:nth-child(2):hover {
+  background-color: #70a2882d;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.Menu li:nth-child(3):hover {
+  background-color: #dab7852e;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.Menu li:nth-child(4):hover {
+  background-color: #8e93ca25;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
 .ImgWrapper img {
@@ -45,3 +66,20 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.ProjectListHome svg, .ProjectListHome:hover {
+  color: #70A288;
+}
+
+.ProjectListWork svg, .ProjectListWork:hover {
+  color: #DAB785
+}
+
+.ProjectListPersonal svg, .ProjectListPersonal:hover {
+  color: #8e93cae7;
+}
+
+.ProjectListAll svg, .ProjectListAll:hover {
+  color: rgb(181, 170, 157)
+}
+

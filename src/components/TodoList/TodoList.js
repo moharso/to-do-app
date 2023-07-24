@@ -19,7 +19,7 @@ const TodoList = ({ search, selectedProject }) => {
     },
     dark: {
       backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='2000' height='1000' preserveAspectRatio='none' viewBox='0 0 2000 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1006%26quot%3b)' fill='none'%3e%3crect width='2000' height='1000' x='0' y='0' fill='rgba(14%2c 14%2c 14%2c 1)'%3e%3c/rect%3e%3cpath d='M1014.31 974.22 a244 244 0 1 0 488 0 a244 244 0 1 0 -488 0z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-68.21 175.25 a193.53 193.53 0 1 0 387.06 0 a193.53 193.53 0 1 0 -387.06 0z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M706.71 498.57 a233.77 233.77 0 1 0 467.54 0 a233.77 233.77 0 1 0 -467.54 0z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1794.8000130530304 628.6047511228553L1626.5951761152628 454.4235435475972 1620.6188054777724 796.8095880606229z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1782.629%2c775.446C1821.362%2c776.773%2c1850.95%2c745.578%2c1870.851%2c712.322C1891.452%2c677.895%2c1907.871%2c635.389%2c1886.912%2c601.179C1866.506%2c567.871%2c1821.639%2c566.301%2c1782.629%2c568.322C1748.004%2c570.116%2c1712.609%2c580.927%2c1695.52%2c611.094C1678.628%2c640.913%2c1688.239%2c676.336%2c1704.288%2c706.617C1721.735%2c739.535%2c1745.395%2c774.171%2c1782.629%2c775.446' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-4.371140224566367 911.7297943202998L263.30384482809393 921.0772107720309 4.976276227164683 644.0548092676395z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1350.0713229061234 530.2832968369255L1233.3972741250884 679.6192692682985 1382.7332465564614 796.2933180493335 1499.4072953374964 646.9573456179605z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M154.2670929542923 591.8260214585125L350.4643821558626 826.0979042311048 446.1921603682147 576.7185160226722z' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M870.719%2c791.951C957.965%2c791.763%2c1044.999%2c756.401%2c1088.004%2c680.49C1130.49%2c605.494%2c1117.78%2c511.739%2c1070.168%2c439.889C1027.202%2c375.051%2c948.451%2c355.385%2c870.719%2c352.593C786.061%2c349.552%2c691.751%2c354.094%2c644.807%2c424.61C593.943%2c501.015%2c603.725%2c603.244%2c651.808%2c681.429C697.704%2c756.057%2c783.107%2c792.14%2c870.719%2c791.951' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M177.886%2c961.049C235.419%2c961.233%2c293.846%2c935.445%2c319.179%2c883.79C342.455%2c836.33%2c312.973%2c785.259%2c286.551%2c739.476C260.117%2c693.671%2c230.753%2c640.32%2c177.886%2c638.958C123.632%2c637.561%2c86.05%2c686.525%2c59.073%2c733.617C32.304%2c780.346%2c13.209%2c835.161%2c38.145%2c882.893C64.631%2c933.593%2c120.684%2c960.866%2c177.886%2c961.049' fill='rgba(255%2c 255%2c 255%2c 0.39)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1006'%3e%3crect width='2000' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e")`,
-      color: '#ffffff',
+      color: '#333333',
       transition: '0.3s',
     },
   };
@@ -56,12 +56,13 @@ const TodoList = ({ search, selectedProject }) => {
   return (
     <div className="TodoListWrapper" style={{ ...TodoListStyles[theme] }}>
     <div className="TodoList">
+      <div>
       <h4>REMAINING TASKS: {remainingItems}</h4>
       <h2>What do you have planned?</h2>
-
+      </div>
       {/* passing filtered Todos list */}
       <InputForm todos={filteredTodos} setTodos={setTodos} />
-
+      <div className="DeleteAllButtonWrapper">
       <button className="DeleteAll"
         onClick={() => {
           const remainingTodos = todos.filter((todo) => !todo.isChecked);
@@ -70,6 +71,7 @@ const TodoList = ({ search, selectedProject }) => {
       >
         DELETE COMPLETED TASKS
       </button>
+    </div>
     </div>
     </div>
   );

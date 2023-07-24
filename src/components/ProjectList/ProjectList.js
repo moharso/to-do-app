@@ -18,14 +18,16 @@ const ProjectList = ({ onProjectClick }) => {
 
   const ProjectListStyles = {
     light: {
-      backgroundColor: '#f0f0f0',
+      backgroundColor: 'rgb(239 238 235)',
       color: '#333333',
       transition: '0.3s',
+      borderRight: '2px solid rgb(255 255 255 / 11%)'
     },
     dark: {
-      backgroundColor: '#121314',
+      backgroundColor: 'rgb(15 19 24)',
       color: '#ffffff',
       transition: '0.3s',
+      borderRight: '2px solid #8a8a8a0f'
     },
   };
   return (
@@ -42,7 +44,7 @@ const ProjectList = ({ onProjectClick }) => {
             key={projectType}
             onClick={() => onProjectClick(projectType)}
           >
-           <FontAwesomeIcon icon={iconMap[projectType]} /> {projectType}
+           <FontAwesomeIcon icon={iconMap[projectType]}/> {projectType}
           </li>
         ))}
       </ul>

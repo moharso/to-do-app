@@ -1,17 +1,21 @@
 .TodoList {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 10px;
   height: 95%;
-  width: 80%;
+  width: 75%;
   background: rgba(197, 195, 190, 0.7);
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 0px );
   -webkit-backdrop-filter: blur( 0px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-  padding: 3rem 3rem 0rem 3rem;
+  padding: 3rem 8rem 0rem 5rem;
+  overflow-y: scroll;
+}
+
+.TodoList::-webkit-scrollbar {
+  display: none;
 }
 
 .TodoList h4 {
@@ -33,17 +37,38 @@
   border: solid rgb(180, 169, 157) 2px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
   border-radius: 16px;
-  transition : 2008ms;
+  transition : 1000ms;
   transform: translateY(0);
   cursor: pointer;
   width: 17rem;
   }
   
   .DeleteAll:hover{
-  transition : 2008ms;
-  padding: 10px 41px;
+  transition : 1000ms;
+  padding: 10px 30px;
   transform : translateY(-0px);
   background-color: #fff;
   color: #000000;
   border: solid 2px #dcdbda;
+  }
+
+  .DeleteAll:active{
+    background-color: #030303;
+    border: solid 2px #000000;
+    }
+
+  .DeleteAllButtonWrapper {
+    display: flex;
+    align-items: center;
+    height: 10rem;
+    padding: 0rem 1rem;
+  }
+
+  @media screen and (max-width: 1650px) {
+    .DeleteAllButtonWrapper {
+      padding: 0rem 0rem 3rem 0rem;
+      height: 1rem;
+      width: 27rem;
+      justify-content: center;
+    }
   }
