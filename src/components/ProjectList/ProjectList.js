@@ -31,24 +31,24 @@ const ProjectList = ({ onProjectClick }) => {
     },
   };
   return (
-    <div className="ProjectListWrapper" style={{...ProjectListStyles[theme]}}>
+    <div className="ProjectListWrapper" style={{ ...ProjectListStyles[theme] }}>
       <div className="ImgWrapper">
-    <img src={logo} alt="To Do App"/>
-    </div>
-    <div className="ProjectList">
-      <h1>Projects</h1>
-      <ul className="Menu">
-        {projectTypes.map((projectType) => (
-          <li
-            className={`ProjectList${projectType}`}
-            key={projectType}
-            onClick={() => onProjectClick(projectType)}
-          >
-           <FontAwesomeIcon icon={iconMap[projectType]}/> {projectType}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <img src={logo} alt="To Do App" />
+      </div>
+      <div className="ProjectList">
+        <h1>Projects</h1>
+        <ul className="Menu">
+          {projectTypes.map((projectType) => (
+            <li
+              className={`ProjectList${projectType}`}
+              key={projectType}
+              onClick={() => onProjectClick(projectType)}
+            >
+              <FontAwesomeIcon icon={iconMap[projectType]} /> {projectType}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

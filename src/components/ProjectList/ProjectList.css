@@ -3,12 +3,6 @@
   padding: 1rem;
 }
 
-.menu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
 .Menu li {
   display: flex;
   align-items: center;
@@ -67,19 +61,29 @@
   gap: 20px;
 }
 
-.ProjectListHome svg, .ProjectListHome:hover {
-  color: #70A288;
+.ProjectListHome svg,
+.ProjectListHome:hover {
+  color: #70a288;
 }
 
-.ProjectListWork svg, .ProjectListWork:hover {
-  color: #DAB785
+.ProjectListWork svg,
+.ProjectListWork:hover {
+  color: #dab785;
 }
 
-.ProjectListPersonal svg, .ProjectListPersonal:hover {
+.ProjectListPersonal svg,
+.ProjectListPersonal:hover {
   color: #8e93cae7;
 }
 
-.ProjectListAll svg, .ProjectListAll:hover {
-  color: rgb(181, 170, 157)
+.ProjectListAll svg,
+.ProjectListAll:hover {
+  color: rgb(181, 170, 157);
 }
 
+@media screen and (max-width: 1150px) {
+  .ProjectListWrapper {
+    width: 20%;
+    min-width: 150px;
+  }
+}

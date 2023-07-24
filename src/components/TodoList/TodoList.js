@@ -1,14 +1,15 @@
-import { useState, useEffect} from "react";
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./TodoList.css";
 import InputForm from "../InputForm/InputForm.js";
 import { ThemeContext } from "../../context/ThemeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = ({ search, selectedProject }) => {
   const [todos, setTodos] = useState([]);
   const [isComponentLoaded, setIsComponentLoaded] = useState(false);
   const [remainingItems, setRemainingItems] = useState(0);
-  
+
   const { theme } = useContext(ThemeContext);
 
   const TodoListStyles = {
@@ -23,7 +24,6 @@ const TodoList = ({ search, selectedProject }) => {
       transition: '0.3s',
     },
   };
-  
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
@@ -41,7 +41,7 @@ const TodoList = ({ search, selectedProject }) => {
   }, [todos, isComponentLoaded]);
 
   if (!isComponentLoaded) {
-    return <h2>Loading...</h2>; //add spinner
+    return <FontAwesomeIcon icon={faCircleNotch} spin />
   }
 
   //todos array filter
@@ -55,24 +55,23 @@ const TodoList = ({ search, selectedProject }) => {
 
   return (
     <div className="TodoListWrapper" style={{ ...TodoListStyles[theme] }}>
-    <div className="TodoList">
-      <div>
-      <h4>REMAINING TASKS: {remainingItems}</h4>
-      <h2>What do you have planned?</h2>
+      <div className="TodoList">
+        <div>
+          <h4>REMAINING TASKS: {remainingItems}</h4>
+          <h2>What do you have planned?</h2>
+        </div>
+        <InputForm todos={filteredTodos} setTodos={setTodos} />
+        <div className="DeleteAllButtonWrapper">
+          <button className="DeleteAll"
+            onClick={() => {
+              const remainingTodos = todos.filter((todo) => !todo.isChecked);
+              setTodos(remainingTodos);
+            }}
+          >
+            DELETE COMPLETED TASKS
+          </button>
+        </div>
       </div>
-      {/* passing filtered Todos list */}
-      <InputForm todos={filteredTodos} setTodos={setTodos} />
-      <div className="DeleteAllButtonWrapper">
-      <button className="DeleteAll"
-        onClick={() => {
-          const remainingTodos = todos.filter((todo) => !todo.isChecked);
-          setTodos(remainingTodos);
-        }}
-      >
-        DELETE COMPLETED TASKS
-      </button>
-    </div>
-    </div>
     </div>
   );
 };

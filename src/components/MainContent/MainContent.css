@@ -1,7 +1,6 @@
-  .TodoListWrapper {
-    display: flex;
-    justify-content: center;
-    width: 83vw;
-    padding: 5vh;
-  }
-  
+.TodoListWrapper {
+  display: flex;
+  justify-content: center;
+  width: 83vw;
+  padding: 5vh;
+}

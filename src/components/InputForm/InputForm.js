@@ -60,13 +60,11 @@ const InputForm = ({ todos, setTodos }) => {
     setTodos((prevTodos) => prevTodos.filter((todo, i) => i !== index));
   };
 
-
-
   return (
     <div className="InputForm">
       <form onSubmit={handleFormSubmit}>
         <input
-        className="AddTaskInput"
+          className="AddTaskInput"
           type="text"
           name="todo"
           placeholder="+ Add your task"
@@ -106,60 +104,60 @@ const InputForm = ({ todos, setTodos }) => {
           <span className="PersonalSpan">Personal</span>
         </label>
         <div className="AddTaskButtonWrapper">
-        <button className="AddTaskButton" type="submit">ADD TASK</button>
+          <button className="AddTaskButton" type="submit">ADD TASK</button>
         </div>
       </form>
       <div className="Todos">
-      <ul>
-        {todos.map((todo, index) => (
-          <div className="todoListItem" key={index}>
-            <input
-            className={`TodosCheckbox${todo.type}`}
-              onClick={() => {
-                setTodos((prevTodos) => {
-                  return prevTodos.map((t, i) =>
-                    i === index ? { ...t, isChecked: !t.isChecked } : t
-                  );
-                });
-              }}
-              type="radio"
-              checked={todo.isChecked}
-            />
-            {editMode[index] ? (
+        <ul>
+          {todos.map((todo, index) => (
+            <div className="todoListItem" key={index}>
               <input
-              className={`Edit${todo.type}`}
-                type="text"
-                value={todo.input}
-                onChange={(e) =>
-                  setTodos((prevTodos) =>
-                    prevTodos.map((t, i) =>
-                      i === index ? { ...t, input: e.target.value } : t
-                    )
-                  )
-                }
+                className={`TodosCheckbox${todo.type}`}
+                onClick={() => {
+                  setTodos((prevTodos) => {
+                    return prevTodos.map((t, i) =>
+                      i === index ? { ...t, isChecked: !t.isChecked } : t
+                    );
+                  });
+                }}
+                type="radio"
+                checked={todo.isChecked}
               />
-            ) : (
-            <li
-              style={{ textDecoration: todo.isChecked ? "line-through" : "" }}
-              className={todo.type}
-            >
-              {todo.input}
-            </li>
-            )}
-            
+              {editMode[index] ? (
+                <input
+                  className={`Edit${todo.type}`}
+                  type="text"
+                  value={todo.input}
+                  onChange={(e) =>
+                    setTodos((prevTodos) =>
+                      prevTodos.map((t, i) =>
+                        i === index ? { ...t, input: e.target.value } : t
+                      )
+                    )
+                  }
+                />
+              ) : (
+                <li
+                  style={{ textDecoration: todo.isChecked ? "line-through" : "" }}
+                  className={todo.type}
+                >
+                  {todo.input}
+                </li>
+              )}
 
-            {editMode[index] ? (
-              <button className="SaveButton" onClick={() => handleSaveTodo(index)}><FontAwesomeIcon icon={faFloppyDisk} style={{color: "#22511f",}} /></button>
-            ) : (
-              <button className="EditButton" onClick={() => handleEditTodo(index)}>
-                <FontAwesomeIcon icon={faPenFancy} style={{"--fa-primary-color": "#b7781f", "--fa-secondary-color": "#b7781f",}} />
+
+              {editMode[index] ? (
+                <button className="SaveButton" onClick={() => handleSaveTodo(index)}><FontAwesomeIcon icon={faFloppyDisk} style={{ color: "#22511f", }} /></button>
+              ) : (
+                <button className="EditButton" onClick={() => handleEditTodo(index)}>
+                  <FontAwesomeIcon icon={faPenFancy} style={{ "--fa-primary-color": "#b7781f", "--fa-secondary-color": "#b7781f", }} />
                 </button>
-            )}
-            <button className="DeleteButton" onClick={() => handleDeleteTodo(index)}><FontAwesomeIcon icon={faTrash} style={{"--fa-primary-color": "#005f61", "--fa-secondary-color": "#005f61",}} /></button>
-          </div>
-        ))}
-      </ul>
-    </div>
+              )}
+              <button className="DeleteButton" onClick={() => handleDeleteTodo(index)}><FontAwesomeIcon icon={faTrash} style={{ "--fa-primary-color": "#005f61", "--fa-secondary-color": "#005f61", }} /></button>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

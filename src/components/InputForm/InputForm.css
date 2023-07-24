@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   list-style-type: none;
-  gap: 10px
+  gap: 10px;
 }
 
 .taskType {
@@ -41,7 +41,8 @@
   outline: none;
 }
 
-.AddTaskInput:hover, .AddTaskInput:active {
+.AddTaskInput:hover,
+.AddTaskInput:active {
   background: #cdcdcd85;
   transition: 0.3s;
   outline: none;
@@ -51,36 +52,38 @@
   padding: 20px 0px 15px 10px;
 }
 
-.AddTaskButton{
-font-size: 12px;
-color: #000000;
-background-color: rgb(181, 170, 157);
-padding: 10px 30px;
-border: solid rgb(173, 161, 148) 2px;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-border-radius: 16px;
-transition : 1000ms;
-transform: translateY(0);
-display: flex;
-flex-direction: row;
-align-items: center;
-cursor: pointer;
-width: 8rem;
+.AddTaskButton {
+  font-size: 12px;
+  color: #000000;
+  background-color: rgb(181, 170, 157);
+  padding: 10px 30px;
+  border: solid rgb(173, 161, 148) 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 16px;
+  transition: 1000ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  width: 8rem;
 }
 
-.AddTaskButton:hover{
-transition : 1000ms;
-padding: 10px 30px;
-transform : translateY(-0px);
-background-color: #fff;
-color: #000000;
-border: solid 2px #cdcdcd;
+.AddTaskButton:hover {
+  transition: 1000ms;
+  padding: 10px 30px;
+  transform: translateY(-0px);
+  background-color: #fff;
+  color: #000000;
+  border: solid 2px #cdcdcd;
 }
 
-.AddTaskButton:active{
+.AddTaskButton:active {
   background-color: #030303;
   border: solid 2px #000000;
-  }
+}
 
 .Todos ul {
   display: flex;
@@ -101,7 +104,9 @@ border: solid 2px #cdcdcd;
   accent-color: #af9062;
 }
 
-.HomeCheckbox, .PersonalCheckbox, .WorkCheckbox {
+.HomeCheckbox,
+.PersonalCheckbox,
+.WorkCheckbox {
   display: flex;
   gap: 10px;
   padding: 5px;
@@ -109,10 +114,16 @@ border: solid 2px #cdcdcd;
   border-radius: 10px;
 }
 
-.PersonalSpan, .HomeSpan, .WorkSpan, .todoListItem li, .EditHome, .EditWork, .EditPersonal {
-width: 20rem;
-padding: 0.2rem;
-border-radius: 10px;
+.PersonalSpan,
+.HomeSpan,
+.WorkSpan,
+.todoListItem li,
+.EditHome,
+.EditWork,
+.EditPersonal {
+  width: 20rem;
+  padding: 0.2rem;
+  border-radius: 10px;
 }
 
 .PersonalCheckbox input[type="radio"]:checked + span {
@@ -121,17 +132,17 @@ border-radius: 10px;
 }
 
 .HomeCheckbox input[type="radio"]:checked + span {
-  background-color: #70A288;
+  background-color: #70a288;
   transition: 0.5s;
 }
 
 .WorkCheckbox input[type="radio"]:checked + span {
-  background-color: #DAB785;
+  background-color: #dab785;
   transition: 0.5s;
 }
 
 .Home {
-  background-color: #70A288;
+  background-color: #70a288;
 }
 
 .Personal {
@@ -139,7 +150,7 @@ border-radius: 10px;
 }
 
 .Work {
-  background-color: #DAB785;
+  background-color: #dab785;
 }
 
 .Todos {
@@ -156,11 +167,12 @@ border-radius: 10px;
     position: relative;
     top: 0;
     right: 0;
-  }  
+    justify-content: flex-start;
+  }
 }
 
 .TodosCheckboxHome {
- accent-color: #5e8a73;
+  accent-color: #5e8a73;
 }
 
 .TodosCheckboxWork {

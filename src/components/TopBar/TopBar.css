@@ -1,9 +1,9 @@
- .TopBarContent {
-   display: flex;
-   gap: 10rem;
- }
- 
- .TopBarContent input {
+.TopBarContent {
+  display: flex;
+  gap: 10rem;
+}
+
+.TopBarContent input {
   background-color: #dcdbda;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -36,4 +36,3 @@
   background-color: white;
   transition: 0.3s;
 }
-

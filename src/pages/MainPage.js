@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import MainContent from "../components/MainContent/MainContent";
 import TopBar from "../components/TopBar/TopBar.js";
-
 import { ThemeContext } from "../context/ThemeContext";
-
 import "./MainPage.css";
 
 const MainPage = () => {
@@ -32,9 +30,9 @@ const MainPage = () => {
 
   return (
     <div className="MainPage">
-      <div className="TopBar" style={{...TopBarStyles[theme]}}>
+      <div className="TopBar" style={{ ...TopBarStyles[theme] }}>
         {/* rendering TopBar with props */}
-        <TopBar placeholder="Search for a task" onSearch={handleSearch} className="TopBar"/>
+        <TopBar placeholder="Search for a task" onSearch={handleSearch} className="TopBar" />
         {/* passing selected project and handler to MainContent */}
       </div>
       <div className="MainContent">
