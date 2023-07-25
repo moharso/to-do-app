@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./InputForm.css";
-import { faPenFancy, faTrash, faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPenFancy,
+  faTrash,
+  faFloppyDisk,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InputForm = ({ todos, setTodos }) => {
@@ -104,11 +108,14 @@ const InputForm = ({ todos, setTodos }) => {
           <span className="PersonalSpan">Personal</span>
         </label>
         <div className="AddTaskButtonWrapper">
-          <button className="AddTaskButton" type="submit">ADD TASK</button>
+          <button className="AddTaskButton" type="submit">
+            ADD TASK
+          </button>
         </div>
       </form>
       <div className="Todos">
         <ul>
+          {/* This can be separate component maybe? */}
           {todos.map((todo, index) => (
             <div className="todoListItem" key={index}>
               <input
@@ -138,22 +145,51 @@ const InputForm = ({ todos, setTodos }) => {
                 />
               ) : (
                 <li
-                  style={{ textDecoration: todo.isChecked ? "line-through" : "" }}
+                  style={{
+                    textDecoration: todo.isChecked ? "line-through" : "",
+                  }}
                   className={todo.type}
                 >
                   {todo.input}
                 </li>
               )}
 
-
               {editMode[index] ? (
-                <button className="SaveButton" onClick={() => handleSaveTodo(index)}><FontAwesomeIcon icon={faFloppyDisk} style={{ color: "#22511f", }} /></button>
+                <button
+                  className="SaveButton"
+                  onClick={() => handleSaveTodo(index)}
+                >
+                  <FontAwesomeIcon
+                    icon={faFloppyDisk}
+                    style={{ color: "#22511f" }}
+                  />
+                </button>
               ) : (
-                <button className="EditButton" onClick={() => handleEditTodo(index)}>
-                  <FontAwesomeIcon icon={faPenFancy} style={{ "--fa-primary-color": "#b7781f", "--fa-secondary-color": "#b7781f", }} />
+                <button
+                  className="EditButton"
+                  onClick={() => handleEditTodo(index)}
+                >
+                  <FontAwesomeIcon
+                    icon={faPenFancy}
+                    style={{
+                      "--fa-primary-color": "#b7781f",
+                      "--fa-secondary-color": "#b7781f",
+                    }}
+                  />
                 </button>
               )}
-              <button className="DeleteButton" onClick={() => handleDeleteTodo(index)}><FontAwesomeIcon icon={faTrash} style={{ "--fa-primary-color": "#005f61", "--fa-secondary-color": "#005f61", }} /></button>
+              <button
+                className="DeleteButton"
+                onClick={() => handleDeleteTodo(index)}
+              >
+                <FontAwesomeIcon
+                  icon={faTrash}
+                  style={{
+                    "--fa-primary-color": "#005f61",
+                    "--fa-secondary-color": "#005f61",
+                  }}
+                />
+              </button>
             </div>
           ))}
         </ul>

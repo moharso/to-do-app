@@ -1,35 +1,28 @@
 import React, { useContext } from "react";
 import "./ProjectList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faBriefcase, faUser, faList } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../logo/logo.png"
+import {
+  faHome,
+  faBriefcase,
+  faUser,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
+import logo from "../../logo/logo.png";
 import { ThemeContext } from "../../context/ThemeContext";
+import { ProjectListStyles } from "../../constants/index.ts";
+
+const projectTypes = ["All", "Home", "Work", "Personal"];
+
+const iconMap = {
+  All: faList,
+  Home: faHome,
+  Work: faBriefcase,
+  Personal: faUser,
+};
 
 const ProjectList = ({ onProjectClick }) => {
-  const projectTypes = ["All", "Home", "Work", "Personal"];
-  const iconMap = {
-    All: faList,
-    Home: faHome,
-    Work: faBriefcase,
-    Personal: faUser,
-  };
-
   const { theme } = useContext(ThemeContext);
 
-  const ProjectListStyles = {
-    light: {
-      backgroundColor: 'rgb(239 238 235)',
-      color: '#333333',
-      transition: '0.3s',
-      borderRight: '2px solid rgb(255 255 255 / 11%)'
-    },
-    dark: {
-      backgroundColor: 'rgb(15 19 24)',
-      color: '#ffffff',
-      transition: '0.3s',
-      borderRight: '2px solid #8a8a8a0f'
-    },
-  };
   return (
     <div className="ProjectListWrapper" style={{ ...ProjectListStyles[theme] }}>
       <div className="ImgWrapper">
